@@ -33,7 +33,7 @@ void setup() {
     // Only draw ellipies for some pixels (every 100 pixels ) 
     // BOOLEAN OPRATORS 
     // && LET'S US CHECK two conditions
-    // Only run the code block when both conditions are true.
+    // Only run the code block when both conditions are true.f
     // CONDITION 1    AND     CONDITION 2
     if ((x > 0)&& (y > 0)&& ( y % 5 == 0) && (x % 5 == 0 )) {
     
