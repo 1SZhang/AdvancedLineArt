@@ -12,7 +12,7 @@ void setup() {
   background(255);
  
   // load  from the "data" folder into source object 
-  source = loadImage("jk.JPG");
+  source = loadImage("mj.JPG");
 
   // 423,999
   source.loadPixels();
@@ -21,10 +21,10 @@ void setup() {
   for (int position = 0; position <= 423999; position += 1) {
 
     // get brightness of current pixel
-    float b = 255 - brightness(source.pixels[position]);
+    float b = 255-brightness(source.pixels[position]);
     
     // change brightness value (range of 0 to 255) into a diameter of range 1 to 10 
-    float diameter = map(b, 0, 255, 1, 5);
+    float diameter = map(b, 0, 255, 1, 10);
     
     // get the pixel's current position using integer arithmetic, see: http://russellgordon.ca/lcs/ics3u/integer_arithmetic.jpg
     int x = position % width;  // remainder after integer division e.g.: 13 % 5 = 3 
@@ -35,16 +35,16 @@ void setup() {
     // && LET'S US CHECK two conditions
     // Only run the code block when both conditions are true.
     // CONDITION 1    AND     CONDITION 2
-    if ((x > 0)&& (y > 0)&& ( y % 5 == 0) && (x % 5 == 0 )) {
+    if ((x > 0)&& (y > 0)&& ( y % 3 == 0) && (x % 3 == 0 )) {
     
     // draw an ellipse at position of current pixel
-    rect(x, y, diameter, diameter);
+    ellipse(x, y, diameter, diameter);
     } 
   }
   
 }
 
-// draw() runs repeatedly until we tell it to stops
+// draw() runs repeatedly until we tell it to stop
 void draw() {
 
   // we don't need to animate, so stop the automatic loop
